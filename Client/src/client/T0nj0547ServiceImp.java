@@ -83,7 +83,7 @@ public class T0nj0547ServiceImp implements T0nj0547Service {
     @Path("/get")
     public T0nj0547 getT0nj0547ByBussRfnoRegoFc(@QueryParam("bussrfno") @DefaultValue("98765433") String bussrfno,
                                                 @QueryParam("regofc") @DefaultValue("376430000A")
-                                                String regofc) {
+                                                String regofc) throws NotFoundException {
         PreparedStatement ps = null, ps2 = null;
         String sql =
             "select bussrfno, bussnm, costsid, costsidcomt, regofc, regofccomt, busslocation from t0nj0547 where bussrfno=? and regofc=?";
